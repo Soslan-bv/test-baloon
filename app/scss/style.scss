@@ -1,7 +1,261 @@
 @import "vars";
 @import "libs";
 @import "fonts";
+@import "global";
 
+.header {
+    background-color: #8418FF;
+    &__top {
+    height: 80px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: all .3s;
+    }
+    &__menu {
+        display: flex;
+        align-items: center;
+    }
+    &__item + &__item{
+        margin-left: 20px;
+    }
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+    }
+    &__link,
+    &__phone,
+    &__email {
+        font-size: 24px;
+        line-height: 32px;
+        color: #fff;
+        transition: all .3s
+    }
+    &__link:hover,
+    &__phone:hover,
+    &__email:hover {
+        color: #000;
+    }
+}
+.header__about-page {
+    background-color: #50B832;
+}
+.header__tours-page{
+    background-color: #F42A25;
+}
+.header__contacts-page{
+    background-color: #E43AB4;
+}
+.header__catalog-page{
+    background-color: #FBCEB1;
+}
+
+.baloon{
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/header-bg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    &__inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        
+    }
+    &__box {
+        background-color: rgba(0, 0, 0, .5);
+        color: #fff;
+        padding: 0 0 60px 120px;
+        width: 900px;
+        min-width: 0;
+    }
+    &__title {
+        font-size: 46px;
+        line-height: 56px;
+    }
+    &__subtitle {
+        font-size: 32px;
+        line-height: 42px;
+    }
+    &__btn {
+        font-size: 34px;
+        line-height: 46px;
+        padding: 20px 40px;
+        background-color: #CD9575;
+        margin-top: 30px;
+        display: inline-block;
+    }
+}
+
+
+// ------------------------ about ------------------------
+
+.about {
+    &__blockquote {
+        position: relative;
+        font-size: 28px;
+        line-height: 32px;
+        max-width: 600px;
+        margin: 0 auto;
+        
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            width: 32px;
+            height: 32px;
+        }
+        &::after {
+            top: -15px;
+            left: -35px;
+            background-image: url(../images/blockquote-left.svg);
+        }
+        &::before {
+            bottom: -20px;
+            right: 0;
+            background-image: url(../images/blockquote-right.svg);
+        }
+    }
+    &__advantages {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 80px 0;
+    }
+    &__advantages-title {
+        font-size: 36px;
+        line-height: 42px;
+    }
+    &__advantages-subtitle {
+        font-size: 24px;
+        line-height: 32px;
+        margin: 10px 0;
+    }
+    &__advantages-box {
+        width: 200px;
+        text-align: center;
+        border: 1px solid #000;
+        padding: 20px;
+    }
+}
+
+// -------------------- tours ------------------------
+.tours {
+    margin: 70px 0;
+    &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    }
+    &__box {
+        width: 400px;
+        text-align: center;
+    }
+    &__box:nth-child(even) {
+        margin-bottom: 30px;
+    }
+    &__descr,
+    &__sum {
+        display: block;
+        margin: 5px 0;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 500;
+    }
+    &__sum {
+        font-size: 20px;
+        line-height: 26px;
+    }
+    &__subtitle {
+        font-size: 24px;
+        line-height: 32px;
+        margin: 10px 0;
+        font-weight: 700;
+    }
+    &__btn {
+        padding: 20px 0;
+        margin-top: 20px;
+        width: 80%;
+        background-color: $yellow;
+        font-size: 20px;
+        line-height: 24px;
+        display: inline-block;
+        cursor: pointer;
+        transition: all .3s;
+    }
+    &__btn:hover {
+        color: #fff;
+    }
+}
+
+
+
+// ------------------------------ contacts ---------------------------------
+
+.contacts {
+    padding: 50px 0;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__content {
+        margin-left: 50px;
+    }
+    &__form-input {
+        font-size: 18px;
+        line-height: 22px;
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 1px solid #808080;
+        border-radius: 10px;
+        width: 100%;
+        &::placeholder {
+            font-size: 20px;
+            line-height: 28px;
+            color: #808080;
+        }
+    }
+    &__form-btn {
+        width: 100%;
+        background-color: $yellow;
+        padding: 20px 0;
+        font-size: 24px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 20px;
+        margin: 15px 0;
+        transition: all .3s;
+    }
+    &__form-btn:hover {
+        color: #fff;
+    }
+    &__form-checkbox {
+        all: revert;
+    }
+    
+
+}
+
+
+
+
+
+.footer {
+    background-color: #332F2C;
+    padding: 20px 0;
+    &__inner {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+}
 
 
 
